@@ -1,0 +1,979 @@
+
+<html>
+  <head>
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LBSDQ0MXB0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LBSDQ0MXB0');
+</script>
+<meta name="google-adsense-account" content="ca-pub-3924388554248092">
+    <title>Gaming Escape</title>
+    <link rel="stylesheet" href="https://g-mcb.github.io/src/styles.css">
+  <link rel="icon" type="image/x-icon" href="https://g-mcb.github.io/src/images/favicon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      .game-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 60px 200px;
+        }
+        .game-button {
+            position: relative;
+            background-color: #000000;
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .game-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: opacity 0.3s ease;
+           
+
+        }
+        .game-button:hover img {
+            opacity: 0.5;
+          
+        }
+      .game-button:hover {
+             transform: scale(1.05);
+          
+        }
+        .overlay-text {
+            margin: 10px, 0px;
+            position: absolute;
+            color: white;
+            font-family: "Nunito", serif;
+            font-size: 18px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .game-button:hover .overlay-text {
+            opacity: 1;
+        }
+        .game-title {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 36px;
+            margin: 10px 0 0 0;
+        }
+        .games-title {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+            
+        }
+        .search-bar-container {
+            display: flex;
+            justify-content: center;
+            padding-top: 60px;
+            }
+        .search-bar {
+            opacity: 0.7;
+            position: fixed;
+            width: 50%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 2px solid #000;
+            color: black;
+            font-family: "Nunito", serif;
+            font-size: 16px;
+            z-index: 2;
+            
+          }
+    </style>
+  </head>
+  <body>
+    
+<div class="search-bar-container">
+        <input type="text" id="gameSearch" class="search-bar" placeholder="Search for a game..." oninput="filterGames()">
+    </div>
+
+<div class="game-grid">
+  
+       <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/minecraft-1.12/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/minecraft-1.12.jpg" alt="">
+                <div class="overlay-text">Minecraft 1.12</div>
+            </a> </div>
+    
+       <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/eaglercraft/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/minecraft.jpg" alt="">
+                <div class="overlay-text">Minecraft 1.8</div>
+            </a> </div>
+
+       <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/fnaf.html">
+                <img src="https://g-mcb.github.io/public/assets/images/fnaf.png" alt="">
+                <div class="overlay-text">FNaF</div>
+            </a> </div>
+
+    <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/undertale">
+                <img src="https://g-mcb.github.io/public/assets/images/undertale.png" alt="">
+                <div class="overlay-text">Undertale</div>
+            </a> </div>
+  
+      <div class="game-button">
+            <a href="https://cq.jsx.pm/3f8b41ce6334457694808e77ecc354c9/_rhszwhAQ://txW6yZAPX8B4wRG.VPErVVjXZjq.cGT/">
+                <img src="public/assets/images/smashkarts.png" alt="">
+                <div class="overlay-text">Smash Karts</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/buildnowgg.html">
+                <img src="https://g-mcb.github.io/public/assets/images/buildnowgg.webp" alt="">
+                <div class="overlay-text">Buildnow.gg</div>
+            </a> </div>
+      
+    <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/yohoho-io/">
+                <img src="https://g-mcb.github.io/public/assets/images/yohohoio.png" alt="">
+                <div class="overlay-text">Yohoho.io</div>
+            </a> </div>
+      
+     <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/poly-track/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/polytrack.png" alt="">
+                <div class="overlay-text">Poly Track</div>
+            </a> </div>
+
+        <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/slow-roads/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/slowroads.png" alt="">
+                <div class="overlay-text">Slow Roads</div>
+            </a> </div>
+      
+       <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/under-the-red-sky/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/undertheredsky.png" alt="">
+                <div class="overlay-text">Under the Red Sky</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/animal-arena/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/animalarena.png" alt="">
+                <div class="overlay-text">Animal Arena</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href=”https://g-mcb.github.io/public/assets/games/poor-bunny/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/poorbunny.png" alt="">
+                <div class="overlay-text">Poor Bunny</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/ducklings-io/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/ducklingsio.png" alt="">
+                <div class="overlay-text">Ducklings.io</div>
+            </a> </div>
+
+       <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/bad-piggies/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/badpiggies.png" alt="">
+                <div class="overlay-text">Bad Piggies</div>
+            </a> </div>
+
+   <div class="game-button">
+            <a href="https://g-mcb.github.io//public/assets/games/angry-birds/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/angrybirds.png" alt="">
+                <div class="overlay-text">Angry Birds</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/blumgi-racers/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/blumgiracers.png" alt="">
+                <div class="overlay-text">Blumgi Racers</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/blumgi-soccer/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/blumgisoccer.png" alt="">
+                <div class="overlay-text">Blumgi Soccer</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/blumgi-dragon/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/blumgidragon.png" alt="">
+                <div class="overlay-text">Blumgi Dragon</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/blumgi-bloom/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/blumgibloom.png" alt="">
+                <div class="overlay-text">Blumgi Bloom</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/blumgi-ball/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/blumgiball.png" alt="">
+                <div class="overlay-text">Blumgi Ball</div>
+            </a> </div>
+            
+              <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/blumgi-castle/ ">
+                <img src="public/assets/images/blumgicastle.png" alt="">
+                <div class="overlay-text">Blumgi Castle</div>
+</a> </div>
+      
+              <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/blumgi-rocket/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/blumgirocket.png" alt="">
+                <div class="overlay-text">Blumgi Rocket</div>
+</a> </div>
+      
+              <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/blumgi-slime/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/blumgislime.png" alt="">
+                <div class="overlay-text">Blumgi Slime</div>
+</a> </div>
+      
+              <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/swingo/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/swingo.png" alt="">
+                <div class="overlay-text">Swingo</div>
+</a> </div>
+      
+              <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/zombie-rush/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/zombierush.png" alt="">
+                <div class="overlay-text">Zombie Rush</div>
+</a> </div>
+      
+              <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/animals-volleyball/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/animalsvolleyball.png" alt="">
+                <div class="overlay-text">Animals Volleyball</div>              
+</a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/dreadhead-parkour/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/dreadheadparkour.png" alt="">
+                <div class="overlay-text">Dreadhead Parkour</div>              
+</a> </div>
+      
+              <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/jump-only/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/jumponly.png" alt="">
+                <div class="overlay-text">Jump Only</div>
+</a> </div>
+              <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/blumgi-ball/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/blumgiball.png" alt="">
+                <div class="overlay-text">Blumgi Ball</div>
+</a> </div>
+              <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/chicken-merge-2/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/chickenmerge2.png"" alt="">
+                <div class="overlay-text">Chicken Merge 2</div>
+</a> </div>
+              <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/chicken-merge/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/chickenmerge.png" alt="">
+                <div class="overlay-text">Chicken Merge</div>
+            </a> </div>
+              <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/gobattle/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/gobattle.png" alt="">
+                <div class="overlay-text">GoBattle</div>
+              </a> </div>
+              <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/dadish-3d/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/dadish3d.png" alt="">
+                <div class="overlay-text">Dadish 3D</div>
+              </a> </div>
+              <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/dadish/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/dadish.png" alt="">
+                <div class="overlay-text">Dadish</div>
+</a> </div>
+              <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/dadish-2/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/dadish2.png" alt="">
+                <div class="overlay-text">Dadish 2</div>
+</a> </div>
+              <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/dadish-3/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/dadish3.png" alt="">
+                <div class="overlay-text">Dadish 3</div>
+</a> </div>
+              <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/super-fowlst/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/superfowlst.png" alt="">
+                <div class="overlay-text">Super Fowlst</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/super-fowlst-2/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/superfowlst2.png" alt="">
+                <div class="overlay-text">Super Fowlst 2</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/tag/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/tag.png" alt="">
+                <div class="overlay-text">Tag</div>
+                </a> </div>
+
+           <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/tag-2/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/tag2.png" alt="">
+                <div class="overlay-text">Tag 2</div>
+                </a> </div>
+      
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/shadow-trick/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/shadowtrick.png" alt="">
+                <div class="overlay-text">Shadow Trick</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/zooplop/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/zooplop.png" alt="">
+                <div class="overlay-text">Zooplop</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/physibox/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/physibox.png" alt="">
+                <div class="overlay-text">Physibox</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/block-blast/">
+                <img src="https://g-mcb.github.io/public/assets/images/blockblast.png" alt="">
+                <div class="overlay-text">Block Blast</div>
+                </a> </div>
+  
+<div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/flappy-bird/">
+                <img src="https://g-mcb.github.io/public/assets/images/flappybird.webp" alt="">
+                <div class="overlay-text">Flappy Bird</div>
+            </a> </div>
+
+<div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/cut-the-rope/">
+                <img src="https://g-mcb.github.io/public/assets/images/cuttherope.jpg" alt="">
+                <div class="overlay-text">Cut The Rope</div>
+            </a> </div>
+      
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/geometry-dash/chooselink.html">
+                <img src="https://g-mcb.github.io/public/assets/images/geometrydash.png" alt="">
+                <div class="overlay-text">Geometry Dash</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/water-polo-ragdoll/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/waterpoloragdoll.png" alt="">
+                <div class="overlay-text">Water Polo Ragdoll</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/space-wars-battleground/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/spacewarsbattleground.png" alt="">
+                <div class="overlay-text">Space Wars Battleground</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/level-devil/">
+                <img src="https://g-mcb.github.io/public/assets/images/leveldevil.png" alt="">
+                <div class="overlay-text">Level Devil</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/karlson/">
+                <img src="https://g-mcb.github.io/public/assets/images/karlson.webp" alt="">
+                <div class="overlay-text">Karlson</div>
+                </a> </div>
+
+   <div class="game-button">
+            <a href="https://g-mcb.github.io/static/iframe.html#https://shellshock.io/">
+                <img src="https://g-mcb.github.io/public/assets/images/shellshockers.jpg" alt="">
+                <div class="overlay-text">Shell Shockers</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/armed-forces-io/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/armedforcesio.png" alt="">
+                <div class="overlay-text">ArmedForces.io</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href=”https://g-mcb.github.io/public/assets/games/ks-2-teams/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/ks2teams.png" alt="">
+                <div class="overlay-text">KS 2 Teams</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/subway-surfers/choosegame.html">
+                <img src="https://g-mcb.github.io/public/assets/images/subwaysurfers.png" alt="">
+                <div class="overlay-text">Subway Surfers</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/super-tunnel-rush/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/supertunnelrush.png" alt="">
+                <div class="overlay-text">Super Tunnel Rush</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/unicycle-legend/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/unicyclelegend.png" alt="">
+                <div class="overlay-text">Unicycle Legend</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/unicycle-hero/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/unicyclehero.png" alt="">
+                <div class="overlay-text">Unicycle Hero</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/goober-world/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/gooberworld.png" alt="">
+                <div class="overlay-text">Goober World</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/bobble/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/bobble.png" alt="">
+                <div class="overlay-text">Bobble</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/static/iframe.html#https://html-classic.itch.zone/html/12710809/Production%20WebGL/index.html">
+                <img src="https://g-mcb.github.io/public/assets/images/superautopets.jpg" alt="">
+                <div class="overlay-text">Super Auto Pets</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/merge-the-numbers/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/mergethenumbers.png" alt="">
+                <div class="overlay-text">Merge the Numbers</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/watermelon-game/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/watermelongame.png" alt="">
+                <div class="overlay-text">Watermelon Game</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/choppy-orc/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/choppyorc.png" alt="">
+                <div class="overlay-text">Choppy Orc</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/battle-wheels/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/battlewheels.png" alt="">
+                <div class="overlay-text">Battle Wheels</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/race-survival-arena-king/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/racesurvivalarenaking.png" alt="">
+                <div class="overlay-text">Race Survival Arena King</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/push-your-luck/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/pushyourluck.png" alt="">
+                <div class="overlay-text">Push Your Luck</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/gobble/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/gobble.png" alt="">
+                <div class="overlay-text">Gobble</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/monster-tracks/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/monstertracks.png" alt="">
+                <div class="overlay-text">Monster Tracks</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/drive-mad/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/drivemad.png" alt="">
+                <div class="overlay-text">Drive Mad</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/recoil/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/recoil.png" alt="">
+                <div class="overlay-text">Recoil</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/speed-king/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/speedking.png" alt="">
+                <div class="overlay-text">Speed King</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/bank-robbery/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/bankrobbery.png" alt="">
+                <div class="overlay-text">Bank Robbery</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/bank-robbery-2/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/bankrobbery2.png" alt="">
+                <div class="overlay-text">Bank Robbery 2</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/bank-robbery-3/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/bankrobbery3.png" alt="">
+                <div class="overlay-text">Bank Robbery 3</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/gladihoppers/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/gladihoppers.png" alt="">
+                <div class="overlay-text">Gladihoppers</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/monkey-mart/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/monkeymart.png" alt="">
+                <div class="overlay-text">Monkey Mart</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/moto-x3m/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/motox3m.jpg" alt="">
+                <div class="overlay-text">MotoX3M</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/motox3m2/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/motox3m2.jpg" alt="">
+                <div class="overlay-text">MotoX3M 2</div>
+                </a> </div>
+      
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/motox3m-pool/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/motox3mpoolparty.jpg" alt="">
+                <div class="overlay-text">MotoX3M Pool Party</div>
+                </a> </div>
+
+      
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/motox3m-spooky/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/motox3mspooky.jpg" alt="">
+                <div class="overlay-text">MotoX3M Spooky</div>
+                </a> </div>
+   
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/motox3m-winter/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/motox3mwinter.jpg" alt="">
+                <div class="overlay-text">MotoX3M Winter</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/vex-x3m/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/vexx3m.png" alt="">
+                <div class="overlay-text">Vex X3M</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/vex-8/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/vex8.png" alt="">
+                <div class="overlay-text">Vex 8</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/vex-7/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/vex7.png" alt="">
+                <div class="overlay-text">Vex 7</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/vex-6/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/vex6.png" alt="">
+                <div class="overlay-text">Vex 6</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/vex-5/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/vex5.png" alt="">
+                <div class="overlay-text">Vex 5</div>
+                </a> </div>
+
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/vex-4/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/vex4.png" alt="">
+                <div class="overlay-text">Vex 4</div>
+                </a> </div>
+
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/vex-4/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/vex4.png" alt="">
+                <div class="overlay-text">Vex 4</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/vex-3/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/vex3.png" alt="">
+                <div class="overlay-text">Vex 3</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/rocket-soccer-derby/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/rocketsoccerderby.png" alt="">
+                <div class="overlay-text">Rocket Soccer Derby</div>
+                </a> </div>
+
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/crossy-road/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/crossyroad.png" alt="">
+                <div class="overlay-text">Crossy Road</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/ovo/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/ovo.png" alt="">
+                <div class="overlay-text">OvO</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/ovo-dimensions/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/ovodimensions.png" alt="">
+                <div class="overlay-text">OvO Dimensions</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/table-tennis-world-tour/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/tabletennisworldtour.png" alt="">
+                <div class="overlay-text">Table Tennis World Tour</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/doodle-jump/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/doodlejump.png" alt="">
+                <div class="overlay-text">Doodle Jump</div>
+                </a> </div>
+
+       <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/economical/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/economical.png" alt="">
+                <div class="overlay-text">Economical</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/economical-2/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/economical2.png" alt="">
+                <div class="overlay-text">Economical 2</div>
+                </a> </div>
+
+       <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/day-of-meat-castle/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/dayofmeatcastle.png" alt="">
+                <div class="overlay-text">Day of Meat: Castle</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/day-of-meat-radiation/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/dayofmeatradiation.png" alt="">
+                <div class="overlay-text">Day of Meat: Radiation</div>
+                </a> </div>
+      
+       <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/firered.html">
+                <img src="https://g-mcb.github.io/public/assets/images/firered.jpg" alt="">
+                <div class="overlay-text">Pokemon Fire Red</div>
+            </a> </div>
+
+       <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/leafgreen.html">
+                <img src="https://g-mcb.github.io/public/assets/images/leafgreen.jpg" alt="">
+                <div class="overlay-text">Pokemon Leaf Green</div>
+            </a> </div>
+
+       <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/emerald.html">
+                <img src="https://g-mcb.github.io/public/assets/images/emerald.jpg" alt="">
+                <div class="overlay-text">Pokemon Emerald</div>
+            </a> </div>
+
+ <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/mario-64/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/mario64.jpg" alt="">
+                <div class="overlay-text">Super Mario 64</div>
+                </a> </div>
+  
+       <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/retro-highway/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/retrohighway.png" alt="">
+                <div class="overlay-text">Retro Highway</div>
+                </a> </div>
+      
+       <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/super-liquid-soccer/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/superliquidsoccer.png" alt="">
+                <div class="overlay-text">Super Liquid Soccer</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/yokai-dungeon/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/yokaidungeon.png" alt="">
+                <div class="overlay-text">Yokai Dungeon</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/flip-bros/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/flipbros.png" alt="">
+                <div class="overlay-text">Flip Bros</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/space-major-miner/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/spacemajorminer.png" alt="">
+                <div class="overlay-text">Space Major Miner</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/retro-bowl/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/retrobowl.png" alt="">
+                <div class="overlay-text">Retro Bowl</div>
+                </a> </div>
+
+   <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/retro-bowl-college/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/retrobowlcollege.png" alt="">
+                <div class="overlay-text">Retro Bowl College</div>
+                </a> </div>
+
+       <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/tomb-of-the-mask/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/tombofthemask.png" alt="">
+                <div class="overlay-text">Tomb of the Mask</div>
+                </a> </div>
+      
+<div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/slope/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/slope.png" alt="">
+                <div class="overlay-text">Slope</div>
+            </a> </div>
+      
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/poor-eddie/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/pooreddie.png" alt="">
+                <div class="overlay-text">Poor Eddie</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/drift-boss/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/driftboss.png" alt="">
+                <div class="overlay-text">Drift Boss</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/sausage-flip/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/sausageflip.png" alt="">
+                <div class="overlay-text">Sausage Flip</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/stickman-bike/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/stickmanbike.png" alt="">
+                <div class="overlay-text">Stickman Bike</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/stickman-hook/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/stickmanhook.png" alt="">
+                <div class="overlay-text">Stickman Hook</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/stickman-hook-halloween/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/stickmanhookhalloween.png" alt="">
+                <div class="overlay-text">Stickman Hook Halloween</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/paper-io/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/paperio.jpg" alt="">
+                <div class="overlay-text">Paper.io</div>
+                </a> </div>
+      
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/skiddy-taxi/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/skiddytaxi.png" alt="">
+                <div class="overlay-text">Skiddy Taxi</div>
+                </a> </div>
+      
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/snow-rider-3d/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/snowrider3d.png" alt="">
+                <div class="overlay-text">Snow Rider 3D</div>
+                </a> </div>
+
+       <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/ages-of-conflict/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/agesofconflict.jpg" alt="">
+                <div class="overlay-text">Ages of Conflict</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/gold-digger-fr-vr/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/golddiggerfrvr.png" alt="">
+                <div class="overlay-text">Gold Digger FRVR</div>
+                </a> </div>
+
+                    <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/cookie-clicker/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/cookieclicker.png" alt="">
+                <div class="overlay-text">Cookie Clicker</div>
+                </a> </div>
+      
+<div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/drift-hunters/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/drifthunters.png" alt="">
+                <div class="overlay-text">Drift Hunters</div>
+                </a> </div>
+      
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/crazy-bikes/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/crazybikes.png" alt="">
+                <div class="overlay-text">Crazy Bikes</div>
+                </a> </div>
+
+                <div class="game-button">
+            <a href=https://g-mcb.github.io/public/assets/games/crazy-cars/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/crazycars.png" alt="">
+                <div class="overlay-text">Crazy Cars</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/cluster-rush/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/clusterrush.png" alt="">
+                <div class="overlay-text">Cluster Rush</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/tunnel-rush/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/tunnelrush.png" alt="">
+                <div class="overlay-text">Tunnel Rush</div>
+                </a> </div>
+        
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/dune/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/dune.png" alt="">
+                <div class="overlay-text">Dune</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/rooftop-snipers/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/rooftopsnipers.png" alt="">
+                <div class="overlay-text">Rooftop Snipers</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/rooftop-snipers-2/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/rooftopsnipers2.png" alt="">
+                <div class="overlay-text">Rooftop Snipers 2</div>
+                </a> </div>
+
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/superhot/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/superhot.jpg" alt="">
+                <div class="overlay-text">Superhot</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/time-shooter-2/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/timeshooter2.png" alt="">
+                <div class="overlay-text">Time Shooter 2</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/time-shooter-3/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/timeshooter3.png" alt="">
+                <div class="overlay-text">Time Shooter 3</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/funny-shooter-2/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/funnyshooter2.png" alt="">
+                <div class="overlay-text">Funny Shooter 2</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/double-panda/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/doublepanda.png" alt="">
+                <div class="overlay-text">Double Panda</div>
+                </a> </div>
+      
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/jacksmith/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/jacksmith.png" alt="">
+                <div class="overlay-text">Jacksmith</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="https://g-mcb.github.io/public/assets/games/happy-wheels/ ">
+                <img src="https://g-mcb.github.io/public/assets/images/happywheels.png" alt="">
+                <div class="overlay-text">Happy Wheels</div>
+                </a> </div>
+
+      
+                
+                
+                <script>
+        function filterGames() {
+            const searchInput = document.getElementById('gameSearch').value.toLowerCase();
+            const games = document.querySelectorAll('.game-button');
+
+            games.forEach(game => {
+                const gameTitle = game.querySelector('.overlay-text').textContent.toLowerCase();
+                if (gameTitle.includes(searchInput)) {
+                    game.style.display = 'block';
+                } else {
+                    game.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    
+    
+    </div>
+      <div class="dot"></div>
+  </body>
+</html>
+
+
